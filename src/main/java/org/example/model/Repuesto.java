@@ -15,6 +15,17 @@ public class Repuesto {
         this.cantidadMin = cantidadMin;
     }
 
+    public boolean estaStockBajo(){
+        return cantidadDisponible <= cantidadMin;
+    }
+
+    public void descontarStock(int cantidad){
+        if(cantidad > cantidadDisponible){
+            throw new IllegalArgumentException("Stock insuficiente de" + nombre + "Disponible." + cantidadDisponible);
+        }
+        cantidad -= cantidadDisponible;
+    }
+
     public String getId() {
         return id;
     }
