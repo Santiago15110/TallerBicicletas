@@ -1,4 +1,4 @@
-package org.example.taller_bicicletas;
+package org.example.model;
 
 public enum TipoEspecialidad {
     FRENOS_Y_TRANSMISION,
