@@ -1,4 +1,4 @@
-package org.example.taller_bicicletas;
+package org.example.model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

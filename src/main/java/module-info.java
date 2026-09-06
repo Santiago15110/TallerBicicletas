@@ -5,4 +5,6 @@ module org.example.taller_bicicletas {
 
     opens org.example.taller_bicicletas to javafx.fxml;
     exports org.example.taller_bicicletas;
+    exports org.example.model;
+    opens org.example.model to javafx.fxml;
 }
