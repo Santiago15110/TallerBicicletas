@@ -4,14 +4,14 @@ public class Cicla {
     private String marca;
     private String color;
     private String numeroMarco;
-    private int  ano;
+    private int  anio;
 
 
     public Cicla(String marca, String color, String numeroMarco, int ano) {
         this.marca = marca;
         this.color = color;
         this.numeroMarco = numeroMarco;
-        this.ano = ano;
+        this.anio = ano;
     }
 
     public String getMarca() {
@@ -27,7 +27,7 @@ public class Cicla {
     }
 
     public int getAno() {
-        return ano;
+        return anio;
     }
 
     public void setMarca(String marca) {
@@ -43,6 +43,6 @@ public class Cicla {
     }
 
     public void setAno(int ano) {
-        this.ano = ano;
+        this.anio = ano;
     }
 }
