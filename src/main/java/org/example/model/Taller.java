@@ -1,6 +1,9 @@
 package org.example.model;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Taller {
 
@@ -8,12 +11,18 @@ public class Taller {
     private String nit;
     private String direccion;
     private ArrayList<Cliente> listClientes;
+    private ArrayList<Cicla> listCicla;
+    private ArrayList<Mecanico> listMecanico;
+    private ArrayList<OrdenDeServicio> listOrdenDeServicio;
 
-
-    public Taller(String nombre, String nit, String direeccion) {
+    public Taller(String nombre, String nit, String direccion) {
         this.nombre = nombre;
         this.nit = nit;
         this.direccion = direccion;
+        this.listClientes = new ArrayList<>();
+        this.listCicla = new ArrayList<>();
+        this.listMecanico = new ArrayList<>();
+        this.listOrdenDeServicio = new ArrayList<>();
     }
 
 
@@ -46,9 +55,12 @@ public class Taller {
     public boolean eliminarCliente(String cedula){
 
         Cliente encontrado = buscarClienteByCedula(cedula);
+        if (encontrado == null) {
 
-
-
+            return false;
+        }
+        listClientes.remove(encontrado);
+        return true;
     }
 
 
@@ -65,6 +77,114 @@ public class Taller {
     public String getNombre() {
         return nombre;
     }
+
+    //registro cicla
+
+
+    public boolean registrarCicla(String marca, String color, String numeroMarco, int ano){
+
+        Cicla newCicla = new Cicla(marca, color, numeroMarco, ano);
+
+        for(Cicla i: listCicla){
+
+            if(i.getNumeroMarco().equals(numeroMarco)){
+                return false;
+            }
+        }
+
+        if(listCicla == null){
+
+            return false;
+        }
+
+        listCicla.add(newCicla);
+        return true;
+
+    }
+
+    public Cicla buscarCiclaByNumeroMarco(String numeroMarco){
+
+        for( Cicla i: listCicla){
+            if(i.getNumeroMarco().equals(numeroMarco)){
+                return i;
+            }
+        }
+        return null;
+    }
+
+    // registro mecanico
+
+    public boolean registrarMecanico(String codigo, String nombre){
+
+        Mecanico newMecanico = new Mecanico(codigo, nombre);
+
+        for(Mecanico m: listMecanico){
+
+            if(m.getCodigo().equals(codigo)){
+                return false;
+            }
+        }
+
+        if(listMecanico == null){
+
+            return false;
+        }
+
+        listMecanico.add(newMecanico);
+        return true;
+    }
+
+        public Mecanico buscarMecanicoByCodigo( String codigo){
+
+            for( Mecanico mecanico: listMecanico){
+                if(mecanico.getCodigo().equals(codigo)){
+                    return mecanico;
+                }
+            }
+            return null;
+        }
+
+        //crer orden de servicio
+
+        public OrdenDeServicio registrarOrdenDeServicio(String id, LocalDate fechaDeIngreso, LocalTime hora,
+                                                        String motivoDelServicio, String diagnostico,
+                                                        Cicla cicla, Mecanico mecanico) {
+            OrdenDeServicio nuevaOrden = new OrdenDeServicio(id, fechaDeIngreso, hora,
+                    motivoDelServicio, diagnostico,
+                    cicla, mecanico);
+            this.listOrdenDeServicio.add(nuevaOrden);
+            return nuevaOrden;
+        }
+
+        //Historial de servicios por bicicleta
+            public ArrayList<OrdenDeServicio> listHistorialByCicla(String numeroMarco) {
+                ArrayList<OrdenDeServicio> historial = new ArrayList<>();
+                for (OrdenDeServicio orden : listOrdenDeServicio) {
+                    if (orden.getCicla().getNumeroMarco().equalsIgnoreCase(numeroMarco)) {
+                        historial.add(orden);
+                    }
+                }
+                return historial;
+            }
+
+            //buscar ordenes del dia por fecha
+
+            public ArrayList<OrdenDeServicio> listOrdenesByFecha(LocalDate fecha) {
+                ArrayList<OrdenDeServicio> resultado = new ArrayList<>();
+                for (OrdenDeServicio orden : listOrdenDeServicio) {
+                    if (orden.getFechaIngreso().equals(fecha)) {
+                        resultado.add(orden);
+                    }
+                }
+                return resultado;
+            }
+
+
+
+
+
+
+
 
 
 
@@ -252,3 +372,4 @@ public class Taller {
         this.direccion = direccion;
     }
 }
+

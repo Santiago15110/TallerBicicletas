@@ -12,13 +12,18 @@ public class OrdenDeServicio {
     private String diagnostico;
     private ArrayList<ItemRepuesto> listItems;
     private ArrayList<TrabajoRealizado> listTrabajos;
+    private Cicla cicla;
+    private Mecanico mecanico;
 
-    public OrdenDeServicio(String id, LocalDate fechaIngreso, LocalTime hora, String motivoDelServicio, String diagnostico) {
+    public OrdenDeServicio(String id, LocalDate fechaIngreso, LocalTime hora, String motivoDelServicio,
+                           String diagnostico, Cicla cicla, Mecanico mecanico) {
         this.id = id;
         this.fechaIngreso = fechaIngreso;
         this.hora = hora;
         this.motivoDelServicio = motivoDelServicio;
         this.diagnostico = diagnostico;
+        this.cicla = cicla;
+        this.mecanico = mecanico;
     }
 
 
@@ -90,5 +95,21 @@ public class OrdenDeServicio {
 
     public void setDiagnostico(String diagnostico) {
         this.diagnostico = diagnostico;
+    }
+
+    public Cicla getCicla() {
+        return cicla;
+    }
+
+    public void setCicla(Cicla cicla) {
+        this.cicla = cicla;
+    }
+
+    public Mecanico getMecanico() {
+        return mecanico;
+    }
+
+    public void setMecanico(Mecanico mecanico) {
+        this.mecanico = mecanico;
     }
 }
