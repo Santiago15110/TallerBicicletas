@@ -14,6 +14,7 @@ public class Taller {
     private ArrayList<Cicla> listCicla;
     private ArrayList<Mecanico> listMecanico;
     private ArrayList<OrdenDeServicio> listOrdenDeServicio;
+    private ArrayList<Repuesto> listRepuestos;
 
     public Taller(String nombre, String nit, String direccion) {
         this.nombre = nombre;
@@ -23,6 +24,7 @@ public class Taller {
         this.listCicla = new ArrayList<>();
         this.listMecanico = new ArrayList<>();
         this.listOrdenDeServicio = new ArrayList<>();
+        this.listRepuestos = new ArrayList<>();
     }
 
 
@@ -186,6 +188,19 @@ public class Taller {
                 }
                 return resultado;
             }
+
+
+
+
+    public List<Repuesto> listarRepuestosConStockBajo() {
+        List<Repuesto> resultado = new ArrayList<>();
+        for (Repuesto r : listRepuestos) {
+            if (r.estaStockBajo()) {
+                resultado.add(r);
+            }
+        }
+        return resultado;
+    }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;

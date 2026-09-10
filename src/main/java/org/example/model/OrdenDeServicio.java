@@ -29,16 +29,24 @@ public class OrdenDeServicio {
     }
 
 
+    //metodo para agregar un Item
+
+
     public void agregarItemRepuesto(Repuesto repuesto, int cantidadUsada){
         repuesto.descontarStock(cantidadUsada);
         ItemRepuesto newItemRepuesto = new ItemRepuesto(repuesto, cantidadUsada);
         this.listItems.add(newItemRepuesto);
     }
 
+    //metodo agregar trabajo
+
     public void agregarTrabajo(TrabajoRealizado trabajo) {
 
      this.listTrabajos.add(trabajo);
     }
+
+
+    //Metodo para calcular el costo total de la orden de servicio
 
     public double calcularCostoTotal(){
 
@@ -58,6 +66,8 @@ public class OrdenDeServicio {
        return  totalManoObra + totalRepuestos;
     }
 
+
+    //Metodos gett y set
 
     public String getId() {
         return id;
