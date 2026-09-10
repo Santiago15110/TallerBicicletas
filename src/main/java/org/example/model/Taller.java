@@ -81,9 +81,19 @@ public class Taller {
     //registro cicla
 
 
-    public boolean registrarCicla(String marca, String color, String numeroMarco, int ano){
+    public boolean registrarCicla(String marca, String color, String numeroMarco, int ano, String cedulaCliente){
 
-        Cicla newCicla = new Cicla(marca, color, numeroMarco, ano);
+        if(listCicla == null){
+            return false;
+        }
+
+// se le asigna un cliente asociado a la cicla
+
+        Cliente clienteDueño= buscarClienteByCedula(cedulaCliente);
+        if (clienteDueño==null) {
+            ;
+            return false;
+        }
 
         for(Cicla i: listCicla){
 
@@ -92,11 +102,9 @@ public class Taller {
             }
         }
 
-        if(listCicla == null){
+        Cicla newCicla = new Cicla(marca, color, numeroMarco, ano, clienteDueño );
 
-            return false;
-        }
-
+        clienteDueño.agregarCicla(newCicla);
         listCicla.add(newCicla);
         return true;
 
@@ -178,179 +186,6 @@ public class Taller {
                 }
                 return resultado;
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public void setNombre(String nombre) {
         this.nombre = nombre;

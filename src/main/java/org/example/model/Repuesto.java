@@ -23,7 +23,7 @@ public class Repuesto {
         if(cantidad > cantidadDisponible){
             throw new IllegalArgumentException("Stock insuficiente de" + nombre + "Disponible." + cantidadDisponible);
         }
-        cantidad -= cantidadDisponible;
+        cantidadDisponible -= cantidad;
     }
 
     public String getId() {

@@ -24,6 +24,8 @@ public class OrdenDeServicio {
         this.diagnostico = diagnostico;
         this.cicla = cicla;
         this.mecanico = mecanico;
+        this.listItems=new ArrayList<>();
+        this.listTrabajos=new ArrayList<>();
     }
 
 
