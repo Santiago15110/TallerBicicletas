@@ -2,6 +2,7 @@ package org.example.model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class OrdenDeServicio {
     private String id;
@@ -11,6 +12,8 @@ public class OrdenDeServicio {
     private String diagnostico;
     private Cicla cicla;
     private Mecanico mecanico;
+    private ArrayList<ItemRepuesto> listItems;
+    private ArrayList<TrabajoRealizado> listTrabajos;
 
     public OrdenDeServicio(String id, LocalDate fechaIngreso, LocalTime hora, String motivoDelServicio,
                            String diagnostico, Cicla cicla, Mecanico mecanico) {
@@ -22,6 +25,37 @@ public class OrdenDeServicio {
         this.cicla = cicla;
         this.mecanico = mecanico;
     }
+
+
+    public void agregarItemRepuesto(Repuesto repuesto, int cantidadUsada){
+        repuesto.descontarStock(cantidadUsada);
+        ItemRepuesto newItemRepuesto = new ItemRepuesto(repuesto, cantidadUsada);
+        this.listItems.add(newItemRepuesto);
+    }
+
+    public void agregarTrabajo(TrabajoRealizado trabajo) {
+
+     this.listTrabajos.add(trabajo);
+    }
+
+    public double calcularCostoTotal(){
+
+        double totalRepuestos = 0;
+
+        for(ItemRepuesto i: listItems){
+            totalRepuestos += i.getSubtotal();
+        }
+
+        double totalManoObra =0;
+
+        for(TrabajoRealizado t: listTrabajos){
+
+            totalManoObra += t.getManoObra();
+        }
+
+       return  totalManoObra + totalRepuestos;
+    }
+
 
     public String getId() {
         return id;
