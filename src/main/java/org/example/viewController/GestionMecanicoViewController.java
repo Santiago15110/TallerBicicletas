@@ -8,60 +8,55 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.example.model.Cliente;
+import org.example.model.Mecanico;
 
-public class GestionClientesViewController {
+public class GestionMecanicoViewController {
+
     @FXML private TextField txtNombre;
-    @FXML private TextField txtCedula;
-    @FXML private TextField txtTelefono;
+    @FXML private TextField txtCodigo;
 
-    @FXML private TableView<Cliente> tblClientes;
-    @FXML private TableColumn<Cliente, String> colNombre;
-    @FXML private TableColumn<Cliente, String> colCedula;
-    @FXML private TableColumn<Cliente, String> colTelefono;
+    @FXML private TableView<Mecanico> tblMecanico;
+    @FXML private TableColumn<Mecanico, String> colNombre;
+    @FXML private TableColumn<Mecanico, String> colCodigo;
 
-    private ObservableList<Cliente> listaClientes;
+    private ObservableList<Mecanico> listaMecanico;
 
-    //inicializar la tabla de clientes
+    //inicializar la tabla de Mecanicos
     public void initialize() {
-        listaClientes = FXCollections.observableArrayList();
+        listaMecanico = FXCollections.observableArrayList();
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        colCedula.setCellValueFactory(new PropertyValueFactory<>("cedula"));
-        colTelefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
+        colCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
 
-        tblClientes.setItems(listaClientes);
+        tblMecanico.setItems(listaMecanico);
     }
 
-    //registrar clientes
-    @FXML
-    public void onGuardarCliente() {
+    //registrar Mecanico
+    public void onGuardarMecanico() {
         String nombre = txtNombre.getText();
-        String cedula = txtCedula.getText();
-        String telefono = txtTelefono.getText();
+        String codigo = txtCodigo.getText();
 
-        if (nombre.isEmpty() || cedula.isEmpty() || telefono.isEmpty()){
+        if(nombre.isEmpty() || codigo.isEmpty()) {
             mostrarAlerta("Error, Campos vacios."+"\n"," Todos deben ser rellenados ", Alert.AlertType.WARNING);
             return;
         }
 
-        Cliente cliente= new Cliente(nombre,cedula,telefono,"");
-        listaClientes.add(cliente);
+        Mecanico mecanico = new Mecanico(nombre, codigo);
+        listaMecanico.add(mecanico);
 
         mostrarAlerta("Exito."+"\n","Cliente agregado correctamente",Alert.AlertType.INFORMATION);
         limpiarCampos();
     }
 
-    //boton de regresar al menu
+    //boton de regresar
     @FXML
     public void onVolverMenu(){
 
     }
 
-    //metodo de limpiar campos despues de registrar un cliente
+    @FXML
     private void limpiarCampos() {
         txtNombre.clear();
-        txtCedula.clear();
-        txtTelefono.clear();
+        txtCodigo.clear();
     }
 
     //metodo de alertas y mensajes
@@ -72,4 +67,5 @@ public class GestionClientesViewController {
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
+
 }

@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="618.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.viewController.GestionClientesViewController">
+<AnchorPane prefHeight="504.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.viewController.GestionClientesViewController">
    <children>
       <TextField fx:id="txtNombre" layoutX="35.0" layoutY="135.0" prefHeight="26.0" prefWidth="162.0" />
       <Button layoutX="66.0" layoutY="384.0" mnemonicParsing="false" onAction="#onGuardarCliente" text="Registrar">
@@ -40,12 +39,17 @@
       </Label>
       <TextField fx:id="txtCedula" layoutX="35.0" layoutY="220.0" prefHeight="26.0" prefWidth="162.0" />
       <TextField fx:id="txtTelefono" layoutX="35.0" layoutY="315.0" prefHeight="26.0" prefWidth="162.0" />
-      <TableView fx:id="tblClientes" layoutX="264.0" layoutY="170.0" prefHeight="200.0" prefWidth="297.0">
+      <TableView fx:id="tblClientes" layoutX="264.0" layoutY="176.0" prefHeight="200.0" prefWidth="297.0">
         <columns>
           <TableColumn fx:id="colNombre" prefWidth="123.20001220703125" text="Nombre" />
           <TableColumn fx:id="colCedula" prefWidth="78.39996337890625" text="Cedula" />
             <TableColumn fx:id="colTelefono" prefWidth="96.800048828125" text="Telefono" />
         </columns>
       </TableView>
+      <Label layoutX="264.0" layoutY="135.0" text="Lista de Clientes ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
