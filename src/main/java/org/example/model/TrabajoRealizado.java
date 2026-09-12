@@ -24,4 +24,12 @@ public class TrabajoRealizado {
     public void setManoObra(double manoObra) {
         this.manoObra = manoObra;
     }
+
+    @Override
+    public String toString() {
+        return "TrabajoRealizado{" +
+                "descripcion='" + descripcion + '\'' +
+                ", manoObra=" + manoObra +
+                '}';
+    }
 }

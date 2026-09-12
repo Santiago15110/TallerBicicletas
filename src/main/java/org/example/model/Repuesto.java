@@ -65,4 +65,15 @@ public class Repuesto {
     public void setCantidadMin(int cantidadMin) {
         this.cantidadMin = cantidadMin;
     }
+
+    @Override
+    public String toString() {
+        return "Repuesto{" +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", precio=" + precio +
+                ", cantidadDisponible=" + cantidadDisponible +
+                ", cantidadMin=" + cantidadMin +
+                '}';
+    }
 }

@@ -206,5 +206,18 @@ public class Taller {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+
+    @Override
+    public String toString() {
+        return "Taller{" +
+                "nombre='" + nombre + '\'' +
+                ", nit='" + nit + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", listClientes=" + listClientes +
+                ", listCicla=" + listCicla +
+                ", listMecanico=" + listMecanico +
+                ", listOrdenDeServicio=" + listOrdenDeServicio +
+                '}';
+    }
 }
 

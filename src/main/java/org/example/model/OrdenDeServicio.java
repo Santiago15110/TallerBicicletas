@@ -15,6 +15,21 @@ public class OrdenDeServicio {
     private ArrayList<ItemRepuesto> listItems;
     private ArrayList<TrabajoRealizado> listTrabajos;
 
+    @Override
+    public String toString() {
+        return "OrdenDeServicio{" +
+                "id='" + id + '\'' +
+                ", fechaIngreso=" + fechaIngreso +
+                ", hora=" + hora +
+                ", motivoDelServicio='" + motivoDelServicio + '\'' +
+                ", diagnostico='" + diagnostico + '\'' +
+                ", cicla=" + cicla +
+                ", mecanico=" + mecanico +
+                ", listItems=" + listItems +
+                ", listTrabajos=" + listTrabajos +
+                '}';
+    }
+
     public OrdenDeServicio(String id, LocalDate fechaIngreso, LocalTime hora, String motivoDelServicio,
                            String diagnostico, Cicla cicla, Mecanico mecanico) {
         this.id = id;

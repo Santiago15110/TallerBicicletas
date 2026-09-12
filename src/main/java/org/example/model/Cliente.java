@@ -63,4 +63,14 @@ public class Cliente {
         listCicla.add(cicla);
     }
 
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nombre='" + nombre + '\'' +
+                ", cedula='" + cedula + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", listCicla=" + listCicla +
+                '}';
+    }
 }
