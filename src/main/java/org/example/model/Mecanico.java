@@ -28,11 +28,20 @@ public class Mecanico {
         this.nombre = nombre;
     }
 
+    public TipoEspecialidad getTipoEspecialidad() {
+        return tipoEspecialidad;
+    }
+
+    public void setTipoEspecialidad(TipoEspecialidad tipoEspecialidad) {
+        this.tipoEspecialidad = tipoEspecialidad;
+    }
+
     @Override
     public String toString() {
         return "Mecanico{" +
                 "codigo='" + codigo + '\'' +
                 ", nombre='" + nombre + '\'' +
+                ", tipoEspecialidad=" + tipoEspecialidad +
                 '}';
     }
 }
