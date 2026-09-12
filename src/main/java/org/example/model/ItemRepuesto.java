@@ -25,7 +25,7 @@ public class ItemRepuesto {
         this.repuesto = repuesto;
     }
 
-    public int getCantiadad() {
+    public int getCantidadUsada() {
         return cantidadUsada;
     }
 

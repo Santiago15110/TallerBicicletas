@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.viewController.PrimerPantallaViewController">
+   <children>
+      <Label layoutX="153.0" layoutY="8.0" prefHeight="85.0" prefWidth="302.0" text="Taller de bicicletas " textOverrun="CLIP">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <VBox layoutX="183.0" layoutY="100.0" prefHeight="200.0" prefWidth="262.0">
+         <children>
+            <Button fx:id="gestionCliente" mnemonicParsing="false" onAction="#gestionarCliente" prefHeight="26.0" prefWidth="286.0" text="Gestion Cliente" />
+            <Button fx:id="gestionMecanicos" mnemonicParsing="false" onAction="#gestionarMecanicos" prefHeight="26.0" prefWidth="301.0" text="Gestion Mecanicos" />
+            <Button fx:id="gestionCiclas" mnemonicParsing="false" onAction="#gestionarCiclas" prefHeight="26.0" prefWidth="316.0" text="Gestion Bicicletas" />
+            <Button fx:id="gestionOrden" mnemonicParsing="false" onAction="#gestionarOrdenes" prefHeight="26.0" prefWidth="309.0" text="Gestion Ordenes de servicio" />
+            <Button fx:id="gestionRepuestos" mnemonicParsing="false" onAction="#gestionarRepuestos" prefHeight="26.0" prefWidth="362.0" text="Gestion Repuestos" />
+            <Button fx:id="otro" mnemonicParsing="false" onAction="#irOtrasFuncionalidades" prefHeight="26.0" prefWidth="317.0" text="Otras funciones" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
