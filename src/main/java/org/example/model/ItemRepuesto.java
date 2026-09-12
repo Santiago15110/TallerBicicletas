@@ -32,4 +32,12 @@ public class ItemRepuesto {
     public void setCantiadad(int cantiadad) {
         this.cantidadUsada = cantiadad;
     }
+
+    @Override
+    public String toString() {
+        return "ItemRepuesto{" +
+                "repuesto=" + repuesto +
+                ", cantidadUsada=" + cantidadUsada +
+                '}';
+    }
 }

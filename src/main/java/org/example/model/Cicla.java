@@ -59,4 +59,15 @@ public class Cicla {
     public void setAno(int ano) {
         this.anio = ano;
     }
+
+    @Override
+    public String toString() {
+        return "Cicla{" +
+                "marca='" + marca + '\'' +
+                ", color='" + color + '\'' +
+                ", numeroMarco='" + numeroMarco + '\'' +
+                ", anio=" + anio +
+                ", cliente=" + cliente +
+                '}';
+    }
 }

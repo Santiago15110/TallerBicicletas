@@ -10,10 +10,25 @@ public class OrdenDeServicio {
     private LocalTime hora;
     private String motivoDelServicio;
     private String diagnostico;
-    private ArrayList<ItemRepuesto> listItems;
-    private ArrayList<TrabajoRealizado> listTrabajos;
     private Cicla cicla;
     private Mecanico mecanico;
+    private ArrayList<ItemRepuesto> listItems;
+    private ArrayList<TrabajoRealizado> listTrabajos;
+
+    @Override
+    public String toString() {
+        return "OrdenDeServicio{" +
+                "id='" + id + '\'' +
+                ", fechaIngreso=" + fechaIngreso +
+                ", hora=" + hora +
+                ", motivoDelServicio='" + motivoDelServicio + '\'' +
+                ", diagnostico='" + diagnostico + '\'' +
+                ", cicla=" + cicla +
+                ", mecanico=" + mecanico +
+                ", listItems=" + listItems +
+                ", listTrabajos=" + listTrabajos +
+                '}';
+    }
 
     public OrdenDeServicio(String id, LocalDate fechaIngreso, LocalTime hora, String motivoDelServicio,
                            String diagnostico, Cicla cicla, Mecanico mecanico) {
