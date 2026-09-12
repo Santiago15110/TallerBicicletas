@@ -1,10 +1,12 @@
-module org.example.taller_bicicletas {
+module org.example {
     requires javafx.controls;
     requires javafx.fxml;
 
+    opens org.example to javafx.fxml;
+    opens org.example.viewController to javafx.fxml;
+    opens org.example.controller to javafx.fxml;
 
-    opens org.example.taller_bicicletas to javafx.fxml;
-    exports org.example.taller_bicicletas;
+    exports org.example;
     exports org.example.model;
-    opens org.example.model to javafx.fxml;
+    exports org.example.viewController;
 }
