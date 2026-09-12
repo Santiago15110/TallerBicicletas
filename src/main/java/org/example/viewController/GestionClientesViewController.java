@@ -8,9 +8,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.example.App;
 import org.example.model.Cliente;
+import org.example.util.SceneManager;
+import org.example.controller.IAppControlable;
 
-public class GestionClientesViewController {
+public class GestionClientesViewController implements IAppControlable{
+
+    private App app;
+
     @FXML private TextField txtNombre;
     @FXML private TextField txtCedula;
     @FXML private TextField txtTelefono;
@@ -32,6 +38,12 @@ public class GestionClientesViewController {
         tblClientes.setItems(listaClientes);
     }
 
+    @Override
+    public void setApp(App app){
+        this.app = app;
+        listaClientes.setAll(app.getTaller().getListClientes());
+    }
+
     //registrar clientes
     @FXML
     public void onGuardarCliente() {
@@ -44,8 +56,13 @@ public class GestionClientesViewController {
             return;
         }
 
-        Cliente cliente= new Cliente(nombre,cedula,telefono,"");
-        listaClientes.add(cliente);
+       boolean registrado = app.getTaller().registrarCliente(nombre, cedula, telefono, "");
+
+        if(!registrado){
+            mostrarAlerta("Error", "Ya existe un cliente con esa cedula", Alert.AlertType.WARNING);
+        }
+
+        listaClientes.setAll(app.getTaller().getListClientes());
 
         mostrarAlerta("Exito."+"\n","Cliente agregado correctamente",Alert.AlertType.INFORMATION);
         limpiarCampos();
@@ -53,8 +70,9 @@ public class GestionClientesViewController {
 
     //boton de regresar al menu
     @FXML
-    public void onVolverMenu(){
+     void onVolverMenu() throws Exception{
 
+        SceneManager.cambiarEscena("/org/example/taller_bicicletas/primerPantalla.fxml", app);
     }
 
     //metodo de limpiar campos despues de registrar un cliente
