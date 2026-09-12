@@ -12,6 +12,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         App app = new App();
+        app.setStagePrincipal(stage);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/taller_bicicletas/primerPantalla.fxml"));
         Parent root = loader.load();
 

@@ -202,6 +202,46 @@ public class Taller {
         return resultado;
     }
 
+    public ArrayList<Cliente> getListClientes() {
+        return listClientes;
+    }
+
+    public void setListClientes(ArrayList<Cliente> listClientes) {
+        this.listClientes = listClientes;
+    }
+
+    public ArrayList<Cicla> getListCicla() {
+        return listCicla;
+    }
+
+    public void setListCicla(ArrayList<Cicla> listCicla) {
+        this.listCicla = listCicla;
+    }
+
+    public ArrayList<Mecanico> getListMecanico() {
+        return listMecanico;
+    }
+
+    public void setListMecanico(ArrayList<Mecanico> listMecanico) {
+        this.listMecanico = listMecanico;
+    }
+
+    public ArrayList<OrdenDeServicio> getListOrdenDeServicio() {
+        return listOrdenDeServicio;
+    }
+
+    public void setListOrdenDeServicio(ArrayList<OrdenDeServicio> listOrdenDeServicio) {
+        this.listOrdenDeServicio = listOrdenDeServicio;
+    }
+
+    public ArrayList<Repuesto> getListRepuestos() {
+        return listRepuestos;
+    }
+
+    public void setListRepuestos(ArrayList<Repuesto> listRepuestos) {
+        this.listRepuestos = listRepuestos;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }

@@ -25,31 +25,31 @@ public class PrimerPantallaViewController implements IAppControlable {
 
     @FXML
     void gestionarCliente(ActionEvent event) throws Exception {
-        SceneManager.cambiarEscena(gestionCliente, "/org/example/taller_bicicletas/clientes.fxml", app);
+        SceneManager.cambiarEscena("/org/example/taller_bicicletas/clientes.fxml", app);
     }
 
     @FXML
     void gestionarCiclas(ActionEvent event) throws Exception {
-        SceneManager.cambiarEscena(gestionCiclas, "/org/example/taller_bicicletas/bicicletas.fxml", app);
+        SceneManager.cambiarEscena("/org/example/taller_bicicletas/bicicletas.fxml", app);
     }
 
     @FXML
     void gestionarMecanicos(ActionEvent event) throws Exception {
-        SceneManager.cambiarEscena(gestionMecanicos, "/org/example/taller_bicicletas/mecanicos.fxml", app);
+        SceneManager.cambiarEscena( "/org/example/taller_bicicletas/mecanicos.fxml", app);
     }
 
     @FXML
     void gestionarOrdenes(ActionEvent event) throws Exception {
-        SceneManager.cambiarEscena(gestionOrden, "/org/example/taller_bicicletas/ordenes.fxml", app);
+        SceneManager.cambiarEscena( "/org/example/taller_bicicletas/ordenes.fxml", app);
     }
 
     @FXML
     void gestionarRepuestos(ActionEvent event) throws Exception {
-        SceneManager.cambiarEscena(gestionRepuestos, "/org/example/taller_bicicletas/repuestos.fxml", app);
+        SceneManager.cambiarEscena("/org/example/taller_bicicletas/repuestos.fxml", app);
     }
 
     @FXML
     void irOtrasFuncionalidades(ActionEvent event) throws Exception {
-        SceneManager.cambiarEscena(otro, "/org/example/taller_bicicletas/otras-funciones.fxml", app);
+        SceneManager.cambiarEscena("/org/example/taller_bicicletas/otras-funciones.fxml", app);
     }
 }
