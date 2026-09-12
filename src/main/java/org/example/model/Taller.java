@@ -93,7 +93,6 @@ public class Taller {
 
         Cliente clienteDueño= buscarClienteByCedula(cedulaCliente);
         if (clienteDueño==null) {
-            ;
             return false;
         }
 
@@ -124,9 +123,9 @@ public class Taller {
 
     // registro mecanico
 
-    public boolean registrarMecanico(String codigo, String nombre){
+    public boolean registrarMecanico(String codigo, String nombre, TipoEspecialidad tipoEspecialidad){
 
-        Mecanico newMecanico = new Mecanico(codigo, nombre);
+        Mecanico newMecanico = new Mecanico(codigo, nombre, tipoEspecialidad);
 
         for(Mecanico m: listMecanico){
 

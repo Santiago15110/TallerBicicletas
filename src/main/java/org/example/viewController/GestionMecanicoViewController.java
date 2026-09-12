@@ -10,7 +10,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.example.model.Mecanico;
 import org.example.util.SceneManager;
-import org.example.util.SceneManager;
 import org.example.controller.IAppControlable;
 import org.example.App;
 
@@ -40,16 +39,23 @@ public class GestionMecanicoViewController implements IAppControlable{
     public void onGuardarMecanico() {
         String nombre = txtNombre.getText();
         String codigo = txtCodigo.getText();
+        //agreguele el tipo De especialidad el cual es un enum, porque no se coloco en el constructor
 
         if(nombre.isEmpty() || codigo.isEmpty()) {
             mostrarAlerta("Error, Campos vacios."+"\n"," Todos deben ser rellenados ", Alert.AlertType.WARNING);
             return;
         }
 
-        Mecanico mecanico = new Mecanico(nombre, codigo);
-        listaMecanico.add(mecanico);
+        boolean registrado = app.getTaller().registrarMecanico(nombre, codigo, //agregar);
 
-        mostrarAlerta("Exito."+"\n","Cliente agregado correctamente",Alert.AlertType.INFORMATION);
+        if(!registrado){
+            mostrarAlerta("Error", "Ya existe el mecanico", Alert.AlertType.WARNING);
+            return;
+        }
+
+        listaMecanico.setAll(app.getTaller().getListMecanico());
+
+        mostrarAlerta("Exito."+"\n","Mecanico agregado correctamente",Alert.AlertType.INFORMATION);
         limpiarCampos();
     }
 

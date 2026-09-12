@@ -4,10 +4,12 @@ public class Mecanico {
 
     private String codigo;
     private String nombre;
+    private TipoEspecialidad tipoEspecialidad;
 
-    public Mecanico(String codigo, String nombre) {
+    public Mecanico(String codigo, String nombre, TipoEspecialidad tipoEspecialidad) {
         this.codigo = codigo;
         this.nombre = nombre;
+        this.tipoEspecialidad= tipoEspecialidad;
     }
 
     public String getCodigo() {

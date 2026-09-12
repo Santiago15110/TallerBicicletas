@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+   <children>
+      <Label layoutX="154.0" layoutY="23.0" text="¿QUE QUIERES SABER?">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <TabPane layoutX="9.0" layoutY="66.0" prefHeight="318.0" prefWidth="586.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Buscar Ordenes por dia de fehca" />
+          <Tab text="Historial de servicios por Cicla">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="290.0" prefWidth="564.0">
+                     <children>
+                        <Label layoutX="4.0" layoutY="14.0" prefHeight="22.0" prefWidth="286.0" text="Ingrese el numero de marco de la bicicleta">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="14.0" layoutY="50.0" />
+                        <TableView layoutX="201.0" layoutY="50.0" prefHeight="211.0" prefWidth="384.0">
+                          <columns>
+                            <TableColumn prefWidth="66.4000244140625" text="id" />
+                            <TableColumn prefWidth="76.0" text="Fecha" />
+                              <TableColumn prefWidth="83.20001220703125" text="Marca cicla" />
+                              <TableColumn prefWidth="137.5999755859375" text="Mecanico encargado" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Alerta de Stocks bajos">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+         <effect>
+            <InnerShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="DISAPPEAR" />
+         </cursor>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TabPane>
+      <Label layoutX="-28.0" layoutY="99.0" text="Label" />
+   </children>
+</AnchorPane>
