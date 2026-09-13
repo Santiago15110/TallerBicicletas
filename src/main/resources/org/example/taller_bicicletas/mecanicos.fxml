@@ -36,9 +36,9 @@
       <TextField fx:id="txtCodigo" layoutX="46.0" layoutY="239.0" />
       <TableView fx:id="tblMecanico" layoutX="268.0" layoutY="147.0" prefHeight="200.0" prefWidth="304.0">
         <columns>
-          <TableColumn fx:id="colNombre" prefWidth="112.0" text="Nombre" />
-          <TableColumn fx:id="colCodigo" prefWidth="96.79998779296875" text="Código" />
-            <TableColumn fx:id="colEspecialidad" prefWidth="95.2000732421875" text="Especialidad" />
+          <TableColumn fx:id="colNombre" prefWidth="91.20001220703125" text="Nombre" />
+          <TableColumn fx:id="colCodigo" prefWidth="68.0" text="Código" />
+            <TableColumn fx:id="colEspecialidad" prefWidth="145.60003662109375" text="Especialidad" />
         </columns>
       </TableView>
       <Label layoutX="268.0" layoutY="108.0" text="Lista de Mecanicos">
