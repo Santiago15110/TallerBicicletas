@@ -153,6 +153,32 @@ public class Taller {
             return null;
         }
 
+        //crear repuesto
+        public boolean registrarRepuesto(String id,String nombre, double precio,
+                                         int cantidadDisponible, int cantidadMin){
+        for( Repuesto r: listRepuestos){
+            if(r.getId().equals(id)){
+                return false;
+            }
+        }
+        if(listRepuestos==null){
+            return false;
+        }
+        Repuesto repuesto= new Repuesto(id, nombre, precio, cantidadDisponible, cantidadMin);
+        listRepuestos.add(repuesto);
+        return true;
+    }
+
+        //buscar repuesto por id
+        public Repuesto buscarRepuestoByCodigo(String id){
+        for(Repuesto r: listRepuestos){
+            if(r.getId().equals(id)){
+                return r;
+            }
+        }
+        return null;
+    }
+
         //crer orden de servicio
 
         public OrdenDeServicio registrarOrdenDeServicio(String id, LocalDate fechaDeIngreso, LocalTime hora,
