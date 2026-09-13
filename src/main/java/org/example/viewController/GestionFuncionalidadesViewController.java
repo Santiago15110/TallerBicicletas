@@ -117,14 +117,19 @@ public class GestionFuncionalidadesViewController implements IAppControlable {
 
     @FXML
     private void buscarHistorial() {
-        String serial = txtNumeroMarco.getText();
+        String serial = txtNumeroMarco.getText().trim();
 
         if (serial.isEmpty()) {
             mostrarAlerta("Error", "Debes ingresar el número de marco/serial", Alert.AlertType.WARNING);
             return;
         }
-
         List<OrdenDeServicio> historial = app.getTaller().listHistorialByCicla(serial);
+
+        if (historial == null || historial.isEmpty()) {
+            mostrarAlerta("Sin Resultados", "No se encontraron órdenes de servicio para la bicicleta con marco: " + serial, Alert.AlertType.INFORMATION);
+            tblHistorial.setItems(FXCollections.observableArrayList());
+            return;
+        }
         tblHistorial.setItems(FXCollections.observableArrayList(historial));
     }
 

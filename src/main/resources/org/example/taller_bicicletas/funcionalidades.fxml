@@ -14,9 +14,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.viewController.GestionFuncionalidadesViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.viewController.GestionFuncionalidadesViewController">
    <children>
-      <Label layoutX="154.0" layoutY="23.0" text="¿QUE QUIERES SABER?">
+      <Label layoutX="154.0" layoutY="14.0" text="¿QUE QUIERES SABER?">
          <font>
             <Font size="29.0" />
          </font>
@@ -27,7 +27,7 @@
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="btnBuscarOrden" layoutX="256.0" layoutY="98.0" mnemonicParsing="false" text="Button" />
+                        <Button fx:id="btnBuscarOrden" layoutX="256.0" layoutY="98.0" mnemonicParsing="false" onAction="#buscarOrdenByFecha" text="Buscar" />
                         <Label layoutX="66.0" layoutY="14.0" prefHeight="35.0" prefWidth="453.0" text="Ingrese la fecha para filtrar las ordenes">
                            <font>
                               <Font size="24.0" />
@@ -102,6 +102,6 @@
       </TabPane>
       <Label layoutX="-28.0" layoutY="99.0" text="Label" />
       <Button fx:id="btnVolver" layoutX="26.0" layoutY="10.0" mnemonicParsing="false" onAction="#onVolver" text="Volver" />
-      <Button fx:id="btnActualizar" layoutX="494.0" layoutY="374.0" mnemonicParsing="false" text="Actualizar" />
+      <Button fx:id="btnActualizar" layoutX="494.0" layoutY="374.0" mnemonicParsing="false" onAction="#actualizarStock" text="Actualizar" />
    </children>
 </AnchorPane>

@@ -56,7 +56,12 @@ public class GestionBicicletaViewController implements IAppControlable {
     @Override
     public void setApp(App app) {
         this.app = app;
-        listaCicla.setAll(app.getTaller().getListCicla());
+        if (app != null && app.getTaller() != null) {
+
+            listaCicla.setAll(app.getTaller().getListCicla());
+            cbClienteAsociado.setItems(FXCollections.observableArrayList(app.getTaller().getListClientes()));
+            cbTipo.setItems(FXCollections.observableArrayList(TipoCicla.values()));
+        }
     }
 
     //registrar bicicleta
@@ -109,6 +114,8 @@ public class GestionBicicletaViewController implements IAppControlable {
         txtColor.clear();
         txtNumeroMarco.clear();
         txtAnio.clear();
+        cbClienteAsociado.setValue(null);
+        cbTipo.setValue(null);
 
 
     }

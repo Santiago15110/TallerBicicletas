@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="529.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.viewController.GestionMecanicoViewController">
    <children>
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onVolverMenu" style="-fx-font-weight: bold;" text="&lt;- Regresar" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onVolverMenu" style="-fx-font-weight: bold;" text="Volver" />
       <Label layoutX="180.0" layoutY="24.0" style="-fx-font-weight: bold;" text="Gestión Mecanicos">
          <font>
             <Font size="20.0" />
@@ -34,11 +34,11 @@
       </Button>
       <TextField fx:id="txtNombre" layoutX="46.0" layoutY="147.0" />
       <TextField fx:id="txtCodigo" layoutX="46.0" layoutY="239.0" />
-      <TableView fx:id="tblMecanico" layoutX="268.0" layoutY="147.0" prefHeight="200.0" prefWidth="304.0">
+      <TableView fx:id="tblMecanico" layoutX="254.0" layoutY="152.0" prefHeight="200.0" prefWidth="324.0">
         <columns>
           <TableColumn fx:id="colNombre" prefWidth="91.20001220703125" text="Nombre" />
           <TableColumn fx:id="colCodigo" prefWidth="68.0" text="Código" />
-            <TableColumn fx:id="colEspecialidad" prefWidth="145.60003662109375" text="Especialidad" />
+            <TableColumn fx:id="colEspecialidad" prefWidth="163.20001220703125" text="Especialidad" />
         </columns>
       </TableView>
       <Label layoutX="268.0" layoutY="108.0" text="Lista de Mecanicos">
