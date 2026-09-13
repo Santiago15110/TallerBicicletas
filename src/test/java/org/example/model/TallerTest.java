@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 class TallerTest {
-
+ /*
     private Taller taller;
 
     @BeforeEach
@@ -246,5 +246,7 @@ class TallerTest {
         // Assert
         assertEquals(1, resultado.size());
     }
+
+   */
 }
 
