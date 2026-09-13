@@ -60,9 +60,11 @@ public class GestionClientesViewController implements IAppControlable{
 
         if(!registrado){
             mostrarAlerta("Error", "Ya existe un cliente con esa cedula", Alert.AlertType.WARNING);
+            return;
         }
 
         listaClientes.setAll(app.getTaller().getListClientes());
+
 
         mostrarAlerta("Exito."+"\n","Cliente agregado correctamente",Alert.AlertType.INFORMATION);
         limpiarCampos();

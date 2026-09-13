@@ -4,10 +4,12 @@ public class Mecanico {
 
     private String codigo;
     private String nombre;
+    private TipoEspecialidad tipoEspecialidad;
 
-    public Mecanico(String codigo, String nombre) {
+    public Mecanico(String codigo, String nombre, TipoEspecialidad tipoEspecialidad) {
         this.codigo = codigo;
         this.nombre = nombre;
+        this.tipoEspecialidad= tipoEspecialidad;
     }
 
     public String getCodigo() {
@@ -26,11 +28,20 @@ public class Mecanico {
         this.nombre = nombre;
     }
 
+    public TipoEspecialidad getTipoEspecialidad() {
+        return tipoEspecialidad;
+    }
+
+    public void setTipoEspecialidad(TipoEspecialidad tipoEspecialidad) {
+        this.tipoEspecialidad = tipoEspecialidad;
+    }
+
     @Override
     public String toString() {
         return "Mecanico{" +
                 "codigo='" + codigo + '\'' +
                 ", nombre='" + nombre + '\'' +
+                ", tipoEspecialidad=" + tipoEspecialidad +
                 '}';
     }
 }

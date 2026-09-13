@@ -1,15 +1,13 @@
 package org.example.viewController;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.example.model.Mecanico;
-import org.example.util.SceneManager;
+import org.example.model.TipoEspecialidad;
 import org.example.util.SceneManager;
 import org.example.controller.IAppControlable;
 import org.example.App;
@@ -20,18 +18,27 @@ public class GestionMecanicoViewController implements IAppControlable{
 
     @FXML private TextField txtNombre;
     @FXML private TextField txtCodigo;
+    @FXML private ComboBox<TipoEspecialidad> cbEspecialidad;
 
     @FXML private TableView<Mecanico> tblMecanico;
     @FXML private TableColumn<Mecanico, String> colNombre;
     @FXML private TableColumn<Mecanico, String> colCodigo;
+    @FXML private TableColumn<Mecanico, String> colEspecialidad;
 
     private ObservableList<Mecanico> listaMecanico;
 
     //inicializar la tabla de Mecanicos
     public void initialize() {
         listaMecanico = FXCollections.observableArrayList();
+
+        cbEspecialidad.setItems(FXCollections.observableArrayList(TipoEspecialidad.values()));
+
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+        colEspecialidad.setCellValueFactory(cellData -> {
+            TipoEspecialidad esp = cellData.getValue().getTipoEspecialidad();
+            return new SimpleStringProperty(esp != null ? esp.toString() : "");
+        });
 
         tblMecanico.setItems(listaMecanico);
     }
@@ -40,16 +47,23 @@ public class GestionMecanicoViewController implements IAppControlable{
     public void onGuardarMecanico() {
         String nombre = txtNombre.getText();
         String codigo = txtCodigo.getText();
+        TipoEspecialidad especialidad = cbEspecialidad.getValue();
 
-        if(nombre.isEmpty() || codigo.isEmpty()) {
+        if(nombre.isEmpty() || codigo.isEmpty() || especialidad==null) {
             mostrarAlerta("Error, Campos vacios."+"\n"," Todos deben ser rellenados ", Alert.AlertType.WARNING);
             return;
         }
 
-        Mecanico mecanico = new Mecanico(nombre, codigo);
-        listaMecanico.add(mecanico);
+        boolean registrado = app.getTaller().registrarMecanico(codigo, nombre, especialidad);
 
-        mostrarAlerta("Exito."+"\n","Cliente agregado correctamente",Alert.AlertType.INFORMATION);
+        ;if(!registrado){
+            mostrarAlerta("Error", "Ya existe el mecanico", Alert.AlertType.WARNING);
+            return;
+        }
+
+        listaMecanico.setAll(app.getTaller().getListMecanico());
+
+        mostrarAlerta("Exito."+"\n","Mecanico agregado correctamente",Alert.AlertType.INFORMATION);
         limpiarCampos();
     }
 
@@ -70,6 +84,7 @@ public class GestionMecanicoViewController implements IAppControlable{
     private void limpiarCampos() {
         txtNombre.clear();
         txtCodigo.clear();
+        cbEspecialidad.setValue(null);
     }
 
     //metodo de alertas y mensajes

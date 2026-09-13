@@ -50,6 +50,8 @@ public class PrimerPantallaViewController implements IAppControlable {
 
     @FXML
     void irOtrasFuncionalidades(ActionEvent event) throws Exception {
-        SceneManager.cambiarEscena("/org/example/taller_bicicletas/otras-funciones.fxml", app);
+        SceneManager.cambiarEscena("/org/example/taller_bicicletas/funcionalidades.fxml", app);
     }
+
+
 }
