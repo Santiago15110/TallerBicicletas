@@ -83,19 +83,13 @@ public class Taller {
     //registro cicla
 
 
-    public boolean registrarCicla(String marca, String color, String numeroMarco, int ano, String cedulaCliente){
+    public boolean registrarCicla(String marca, String color, String numeroMarco, TipoCicla tipo, int anio, Cliente clienteAsociado){
 
         if(listCicla == null){
             return false;
         }
 
 // se le asigna un cliente asociado a la cicla
-
-        Cliente clienteDueño= buscarClienteByCedula(cedulaCliente);
-        if (clienteDueño==null) {
-            ;
-            return false;
-        }
 
         for(Cicla i: listCicla){
 
@@ -104,12 +98,9 @@ public class Taller {
             }
         }
 
-        Cicla newCicla = new Cicla(marca, color, numeroMarco, ano, clienteDueño );
-
-        clienteDueño.agregarCicla(newCicla);
+        Cicla newCicla = new Cicla(marca, color, numeroMarco,tipo, anio, clienteAsociado);
         listCicla.add(newCicla);
         return true;
-
     }
 
     public Cicla buscarCiclaByNumeroMarco(String numeroMarco){

@@ -4,16 +4,18 @@ public class Cicla {
     private String marca;
     private String color;
     private String numeroMarco;
-    private int  anio;
-    private Cliente cliente;
+    private TipoCicla tipo;
+    private int anio;
+    private Cliente clienteAsociado;
 
 
-    public Cicla(String marca, String color, String numeroMarco, int ano, Cliente cliente) {
+    public Cicla(String marca, String color, String numeroMarco, TipoCicla tipo, int anio, Cliente cliente) {
         this.marca = marca;
         this.color = color;
         this.numeroMarco = numeroMarco;
-        this.anio = ano;
-        this.cliente = cliente;
+        this.tipo = tipo;
+        this.anio = anio;
+        this.clienteAsociado = cliente;
     }
 
     public int getAnio() {
@@ -25,11 +27,11 @@ public class Cicla {
     }
 
     public Cliente getCliente() {
-        return cliente;
+        return clienteAsociado;
     }
 
     public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+        this.clienteAsociado = cliente;
     }
 
     public String getMarca() {
@@ -63,11 +65,21 @@ public class Cicla {
     @Override
     public String toString() {
         return "Cicla{" +
-                "marca='" + marca + '\'' +
-                ", color='" + color + '\'' +
-                ", numeroMarco='" + numeroMarco + '\'' +
+                "clienteAsociado=" + clienteAsociado +
                 ", anio=" + anio +
-                ", cliente=" + cliente +
+                ", tipo=" + tipo +
+                ", numeroMarco='" + numeroMarco + '\'' +
+                ", color='" + color + '\'' +
+                ", marca='" + marca + '\'' +
                 '}';
     }
+
+    public TipoCicla getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoCicla tipo) {
+        this.tipo = tipo;
+    }
 }
+

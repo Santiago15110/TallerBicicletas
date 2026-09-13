@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -8,48 +9,69 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="504.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.viewController.GestionClientesViewController">
+<AnchorPane prefHeight="547.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.viewController.GestionClientesViewController">
    <children>
-      <TextField fx:id="txtNombre" layoutX="35.0" layoutY="135.0" prefHeight="26.0" prefWidth="162.0" />
-      <Button layoutX="66.0" layoutY="384.0" mnemonicParsing="false" onAction="#onGuardarCliente" text="Registrar">
+      <TextField fx:id="txtNombre" layoutX="16.0" layoutY="102.0" prefHeight="26.0" prefWidth="139.0" />
+      <Button layoutX="36.0" layoutY="486.0" mnemonicParsing="false" onAction="#onGuardarCliente" text="Registrar">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
       <Button layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#onVolverMenu" text="&lt;- Regresar" />
-      <Label layoutX="186.0" layoutY="38.0" prefHeight="26.0" prefWidth="227.0" text="Gestionar Clientes">
+      <Label layoutX="273.0" layoutY="27.0" prefHeight="40.0" prefWidth="266.0" text="Gestionar Bicicletas">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="24.0" />
+            <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="46.0" layoutY="101.0" text="Nombre">
+      <Label layoutX="18.0" layoutY="79.0" text="Marca">
          <font>
-            <Font size="16.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="51.0" layoutY="188.0" text="Cedula">
+      <Label layoutX="17.0" layoutY="146.0" text="Color">
          <font>
-            <Font size="16.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="44.0" layoutY="283.0" text="Telefono">
+      <Label layoutX="16.0" layoutY="207.0" text="Numero de marco">
          <font>
-            <Font size="16.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtCedula" layoutX="35.0" layoutY="220.0" prefHeight="26.0" prefWidth="162.0" />
-      <TextField fx:id="txtTelefono" layoutX="35.0" layoutY="315.0" prefHeight="26.0" prefWidth="162.0" />
-      <TableView fx:id="tblClientes" layoutX="264.0" layoutY="176.0" prefHeight="200.0" prefWidth="297.0">
+      <TextField fx:id="txtCedula" layoutX="16.0" layoutY="166.0" prefHeight="26.0" prefWidth="139.0" />
+      <TextField fx:id="txtTelefono" layoutX="16.0" layoutY="233.0" prefHeight="26.0" prefWidth="139.0" />
+      <TableView fx:id="tblClientes" layoutX="202.0" layoutY="157.0" prefHeight="274.0" prefWidth="524.0">
         <columns>
-          <TableColumn fx:id="colNombre" prefWidth="123.20001220703125" text="Nombre" />
-          <TableColumn fx:id="colCedula" prefWidth="78.39996337890625" text="Cedula" />
-            <TableColumn fx:id="colTelefono" prefWidth="96.800048828125" text="Telefono" />
+          <TableColumn fx:id="colNombre" prefWidth="82.6666259765625" text="Marca" />
+          <TableColumn fx:id="colCedula" prefWidth="81.33331298828125" text="Color" />
+            <TableColumn fx:id="colTelefono" prefWidth="112.0" text="Numero de marco" />
+            <TableColumn fx:id="colTelefono1" minWidth="7.33331298828125" prefWidth="81.99993896484375" text="Tipo" />
+            <TableColumn fx:id="colTelefono11" prefWidth="56.0" text="Año" />
+            <TableColumn fx:id="colTelefono12" prefWidth="108.66668701171875" text="Cliente Asociado" />
         </columns>
       </TableView>
-      <Label layoutX="264.0" layoutY="135.0" text="Lista de Clientes ">
+      <Label layoutX="208.0" layoutY="113.0" text="Lista de Bicicletas">
          <font>
-            <Font size="16.0" />
+            <Font size="20.0" />
          </font>
       </Label>
+      <TextField fx:id="txtNombre1" layoutX="16.0" layoutY="370.0" prefHeight="26.0" prefWidth="139.0" />
+      <Label layoutX="16.0" layoutY="347.0" text="Año">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="16.0" layoutY="438.0" prefHeight="25.0" prefWidth="139.0" />
+      <Label layoutX="14.0" layoutY="410.0" text="Cliente Asociado">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="274.0" text="Tipo">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="16.0" layoutY="302.0" prefHeight="25.0" prefWidth="139.0" />
    </children>
 </AnchorPane>
