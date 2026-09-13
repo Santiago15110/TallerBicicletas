@@ -45,7 +45,7 @@ public class PrimerPantallaViewController implements IAppControlable {
 
     @FXML
     void gestionarRepuestos(ActionEvent event) throws Exception {
-        SceneManager.cambiarEscena("/org/example/taller_bicicletas/repuestos.fxml", app);
+        SceneManager.cambiarEscena("/org/example/taller_bicicletas/repuesto.fxml", app);
     }
 
     @FXML

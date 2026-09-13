@@ -11,8 +11,8 @@
 
 <AnchorPane prefHeight="529.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.viewController.GestionMecanicoViewController">
    <children>
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onVolverMenu" text="&lt;- Regresar" />
-      <Label layoutX="216.0" layoutY="24.0" text="Gestión Mecanicos">
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onVolverMenu" style="-fx-font-weight: bold;" text="&lt;- Regresar" />
+      <Label layoutX="180.0" layoutY="24.0" style="-fx-font-weight: bold;" text="Gestión Mecanicos">
          <font>
             <Font size="20.0" />
          </font>
@@ -27,7 +27,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Button layoutX="78.0" layoutY="400.0" mnemonicParsing="false" onAction="#onGuardarMecanico" text="Registrar">
+      <Button layoutX="78.0" layoutY="400.0" mnemonicParsing="false" onAction="#onGuardarMecanico" style="-fx-font-weight: bold;" text="Registrar">
          <font>
             <Font size="16.0" />
          </font>
