@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="547.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.viewController.GestionBicicletaViewController">
+<AnchorPane prefHeight="547.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.viewController.GestionBicicletaViewController">
    <children>
       <TextField fx:id="txtMarca" layoutX="16.0" layoutY="102.0" prefHeight="26.0" prefWidth="139.0" />
       <Button layoutX="36.0" layoutY="486.0" mnemonicParsing="false" onAction="#onGuardarCliente" text="Registrar">
@@ -17,7 +17,7 @@
             <Font size="19.0" />
          </font>
       </Button>
-      <Button layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#onVolverMenu" text="&lt;- Regresar" />
+      <Button layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#onVolverMenu" text="Volver" />
       <Label layoutX="273.0" layoutY="27.0" prefHeight="40.0" prefWidth="266.0" text="Gestionar Bicicletas">
          <font>
             <Font size="30.0" />
