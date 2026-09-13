@@ -33,7 +33,7 @@ public class GestionBicicletaViewController implements IAppControlable {
     @FXML private TableColumn<Cicla, String> colNumeroMarco;
     @FXML private TableColumn<Cicla, TipoCicla> colTipo;
     @FXML private TableColumn<Cicla, Integer> colAnio;
-    @FXML private TableColumn<Cicla, Cliente> colClienteAsociado;
+    @FXML private TableColumn<Cicla, String> colClienteAsociado;
 
     private ObservableList<Cicla> listaCicla;
 
@@ -45,7 +45,10 @@ public class GestionBicicletaViewController implements IAppControlable {
         colNumeroMarco.setCellValueFactory(new PropertyValueFactory<>("numeroMarco"));
         colTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
         colAnio.setCellValueFactory(new PropertyValueFactory<>("anio"));
-        colClienteAsociado.setCellValueFactory(new PropertyValueFactory<>("cliente"));
+
+        colClienteAsociado.setCellValueFactory(cellData ->
+                new javafx.beans.property.SimpleStringProperty(
+                        cellData.getValue().getCliente().getNombre()));
 
         cbTipo.setItems(FXCollections.observableArrayList(TipoCicla.values()));
 
@@ -65,34 +68,35 @@ public class GestionBicicletaViewController implements IAppControlable {
     }
 
     //registrar bicicleta
-    @FXML
-    public void onGuardarCliente() {
-        String marca = txtMarca.getText();
-        String color = txtColor.getText();
-        String numeroMarco = txtNumeroMarco.getText();
-        TipoCicla tipoCicla = cbTipo.getValue();
+        @FXML
+        public void onGuardarCliente() {
+            String marca = txtMarca.getText();
+            String color = txtColor.getText();
+            String numeroMarco = txtNumeroMarco.getText();
+            TipoCicla tipoCicla = cbTipo.getValue();
 
-        Cliente clienteAsociado = cbClienteAsociado.getValue();
+            Cliente clienteAsociado = cbClienteAsociado.getValue();
 
 
-        if (marca.isEmpty() || color.isEmpty() || numeroMarco.isEmpty() || tipoCicla == null || txtAnio.getText().isEmpty() || clienteAsociado == null){
-            mostrarAlerta("Error, Campos vacios." + "\n", " Todos deben ser rellenados ", Alert.AlertType.WARNING);
-            return;
-        }
+            if (marca.isEmpty() || color.isEmpty() || numeroMarco.isEmpty() || tipoCicla == null || txtAnio.getText().isEmpty() || clienteAsociado == null){
+                mostrarAlerta("Error, Campos vacios." + "\n", " Todos deben ser rellenados ", Alert.AlertType.WARNING);
+                return;
+            }
 
-        int anio;
-        try {
-            anio = Integer.parseInt(txtAnio.getText());
-        } catch (NumberFormatException e) {
-            mostrarAlerta("Error", "El año debe ser un número válido", Alert.AlertType.WARNING);
-            return;
-        }
+            int anio;
+            try {
+                anio = Integer.parseInt(txtAnio.getText());
+            } catch (NumberFormatException e) {
+                mostrarAlerta("Error", "El año debe ser un número válido", Alert.AlertType.WARNING);
+                return;
+            }
 
 
         boolean registrado = app.getTaller().registrarCicla(marca, color, numeroMarco, tipoCicla, anio , clienteAsociado );
 
         if (!registrado) {
             mostrarAlerta("Error", "Ya existe un cliente con esa cedula", Alert.AlertType.WARNING);
+            return;
         }
 
         listaCicla.setAll(app.getTaller().getListCicla());
