@@ -42,10 +42,12 @@ public class GestionBicicletaViewController implements IAppControlable {
         listaCicla = FXCollections.observableArrayList();
         colMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
         colColor.setCellValueFactory(new PropertyValueFactory<>("color"));
-        colNumeroMarco.setCellValueFactory(new PropertyValueFactory<>("numero de marco"));
-        colTipo.setCellValueFactory(new PropertyValueFactory<>("Tipo"));
-        colAnio.setCellValueFactory(new PropertyValueFactory<>("Año"));
-        colClienteAsociado.setCellValueFactory(new PropertyValueFactory<>("Cliente Asociado"));
+        colNumeroMarco.setCellValueFactory(new PropertyValueFactory<>("numeroMarco"));
+        colTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
+        colAnio.setCellValueFactory(new PropertyValueFactory<>("anio"));
+        colClienteAsociado.setCellValueFactory(new PropertyValueFactory<>("cliente"));
+
+        cbTipo.setItems(FXCollections.observableArrayList(TipoCicla.values()));
 
 
         tblCicla.setItems(listaCicla);

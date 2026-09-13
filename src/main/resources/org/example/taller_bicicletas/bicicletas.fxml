@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="547.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.viewController.GestionClientesViewController">
+<AnchorPane prefHeight="547.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.viewController.GestionBicicletaViewController">
    <children>
-      <TextField fx:id="txtNombre" layoutX="16.0" layoutY="102.0" prefHeight="26.0" prefWidth="139.0" />
+      <TextField fx:id="txtMarca" layoutX="16.0" layoutY="102.0" prefHeight="26.0" prefWidth="139.0" />
       <Button layoutX="36.0" layoutY="486.0" mnemonicParsing="false" onAction="#onGuardarCliente" text="Registrar">
          <font>
             <Font size="19.0" />
@@ -38,30 +38,30 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtCedula" layoutX="16.0" layoutY="166.0" prefHeight="26.0" prefWidth="139.0" />
-      <TextField fx:id="txtTelefono" layoutX="16.0" layoutY="233.0" prefHeight="26.0" prefWidth="139.0" />
-      <TableView fx:id="tblClientes" layoutX="202.0" layoutY="157.0" prefHeight="274.0" prefWidth="524.0">
-        <columns>
-          <TableColumn fx:id="colNombre" prefWidth="82.6666259765625" text="Marca" />
-          <TableColumn fx:id="colCedula" prefWidth="81.33331298828125" text="Color" />
-            <TableColumn fx:id="colTelefono" prefWidth="112.0" text="Numero de marco" />
-            <TableColumn fx:id="colTelefono1" minWidth="7.33331298828125" prefWidth="81.99993896484375" text="Tipo" />
-            <TableColumn fx:id="colTelefono11" prefWidth="56.0" text="Año" />
-            <TableColumn fx:id="colTelefono12" prefWidth="108.66668701171875" text="Cliente Asociado" />
-        </columns>
+      <TextField fx:id="txtColor" layoutX="16.0" layoutY="166.0" prefHeight="26.0" prefWidth="139.0" />
+      <TextField fx:id="txtNumeroMarco" layoutX="16.0" layoutY="233.0" prefHeight="26.0" prefWidth="139.0" />
+      <TableView fx:id="tblCicla" layoutX="202.0" layoutY="157.0" prefHeight="274.0" prefWidth="524.0">
+         <columns>
+            <TableColumn fx:id="colMarca" prefWidth="82.6666259765625" text="Marca" />
+            <TableColumn fx:id="colColor" prefWidth="81.33331298828125" text="Color" />
+            <TableColumn fx:id="colNumeroMarco" prefWidth="112.0" text="Numero de marco" />
+            <TableColumn fx:id="colTipo" minWidth="7.33331298828125" prefWidth="81.99993896484375" text="Tipo" />
+            <TableColumn fx:id="colAnio" prefWidth="56.0" text="Año" />
+            <TableColumn fx:id="colClienteAsociado" prefWidth="108.66668701171875" text="Cliente Asociado" />
+         </columns>
       </TableView>
       <Label layoutX="208.0" layoutY="113.0" text="Lista de Bicicletas">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtNombre1" layoutX="16.0" layoutY="370.0" prefHeight="26.0" prefWidth="139.0" />
+      <TextField fx:id="txtAnio" layoutX="16.0" layoutY="370.0" prefHeight="26.0" prefWidth="139.0" />
       <Label layoutX="16.0" layoutY="347.0" text="Año">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="16.0" layoutY="438.0" prefHeight="25.0" prefWidth="139.0" />
+      <ComboBox fx:id="cbTipo" layoutX="16.0" layoutY="302.0" prefHeight="25.0" prefWidth="139.0" />
       <Label layoutX="14.0" layoutY="410.0" text="Cliente Asociado">
          <font>
             <Font size="14.0" />
@@ -72,6 +72,6 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="16.0" layoutY="302.0" prefHeight="25.0" prefWidth="139.0" />
+      <ComboBox fx:id="cbClienteAsociado" layoutX="16.0" layoutY="438.0" prefHeight="25.0" prefWidth="139.0" />
    </children>
 </AnchorPane>
