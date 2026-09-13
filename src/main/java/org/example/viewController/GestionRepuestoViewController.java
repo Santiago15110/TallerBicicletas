@@ -35,14 +35,14 @@ public class GestionRepuestoViewController implements IAppControlable {
 
     //inicializar la tabla
     public void initialize(){
-       listaRepuesto = FXCollections.observableArrayList();
-       colId.setCellValueFactory(new PropertyValueFactory<>("id"));
-       colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-       colPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
-       colCantidadDisponible.setCellValueFactory(new PropertyValueFactory<>("cantidadDisponible"));
-       colCantidadMin.setCellValueFactory(new PropertyValueFactory<>("cantidadMin"));
+        listaRepuesto = FXCollections.observableArrayList();
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        colPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
+        colCantidadDisponible.setCellValueFactory(new PropertyValueFactory<>("cantidadDisponible"));
+        colCantidadMin.setCellValueFactory(new PropertyValueFactory<>("cantidadMin"));
 
-       tblRepuesto.setItems(listaRepuesto);
+        tblRepuesto.setItems(listaRepuesto);
     }
 
     @Override
